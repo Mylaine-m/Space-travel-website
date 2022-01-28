@@ -1,3 +1,13 @@
+/* ------------------ */
+/* Custom Properties */
+/* -----------------*/
+
+:root {
+    --clr-dark: 230 35% 7%;
+    --clr-purple: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+}
+
 /* -------------- */
 /* Reset */
 /* -------------- */
@@ -57,8 +67,11 @@ select {
 }
 
 /* ----------------------- */
-/* General utility classes */
+/* Utility classes */
 /* ----------------------- */
+
+/* general */
+
 .flex {
 	display: flex;
 	gap: var(--gap, 1rem);
@@ -87,4 +100,12 @@ select {
     border: 0;
 }
 
-/*  */
+/* Colors */
+
+.bg-dark {background-color: hsl(var(--clr-dark));}
+.bg-purple {background-color: hsl(var(--clr-purple));}
+.bg-white {background-color: hsl(var(--clr-white));}
+
+.text-dark {color: hsl(var(--clr-dark));}
+.text-purple {color: hsl(var(--clr-purple));}
+.text-white {color: hsl(var(--clr-white));}

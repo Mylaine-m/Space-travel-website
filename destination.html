@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Space Travel</title>
+</head>
+
+<body class="destination">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only"
+                aria-expanded="false">Menu</span></button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span
+                            aria-hidden="true">00</span>home</a>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="destination.html"><span
+                            aria-hidden="true">01</span>destination</a>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="crew.html"><span
+                            aria-hidden="true">02</span>crew</a>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span
+                            aria-hidden="true">03</span>technology</a>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="main" class="grid-container-xxxx grid-container--destination">
+        <h1><span>01</span> Pick your destination</h1>
+        <img src="./assets/destination/image-moon.png" alt="">
+
+        <div>
+            <div>
+                <ul>
+                    <li><a href="#moon">Moon</a></li>
+                    <li><a href="#mars">Mars</a></li>
+                    <li><a href="#europa">Europa</a></li>
+                    <li><a href="#titan">Titan</a></li>
+                </ul>
+            </div>
+            <h2>Moon</h2>
+            <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+                regain perspective and come back refreshed. While you’re there, take in some history
+                by visiting the Luna 2 and Apollo 11 landing sites.</p>
+
+            <div>
+                <p>Avg. distance</p>
+                <p>384,400 km</p>
+            </div>
+            <div>
+                <p>Est. travel time</p>
+                <p>3 days</p>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -147,6 +147,10 @@ select {
 	margin-top: var(--flow-space, 1rem);
 }
 
+.flow--space-small {
+    --flow-space: .75rem;
+}
+
 .container {
 	padding-inline: 2em;
 	margin-inline: auto;
@@ -361,13 +365,12 @@ select {
 		transform: translateX(100%);
 		transition: transform 500ms ease-in-out;
 	}
+    .primary-navigation[data-visible="true"] {
+		transform: translateX(0);
+	}
 
 	.primary-navigation.underline-indicators > .active {
 		border: 0;
-	}
-
-	.primary-navigation[data-visible="true"] {
-		transform: translateX(0);
 	}
 
 	.mobile-nav-toggle {
@@ -431,8 +434,9 @@ select {
 .underline-indicators > * {
 	border: 0;
 	border-bottom: .2rem solid hsl(var(--clr-white) / 0);
-	padding: var(--underline-gap, 1rem) 0;
+	padding: var(--underline-gap, .5rem) 0;
 	cursor: pointer;
+    background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -502,6 +506,7 @@ body {
 
 @media (min-width: 35rem) {
 	.home {
+        background-position: center center;
 		background-image: url(./assets/home/background-home-tablet.jpg);
 	}
 }
@@ -514,13 +519,13 @@ body {
 
 /* Destination page */
 
-/* Moon */
 .destination {
 	background-image: url(./assets/destination/background-destination-mobile.jpg);
 }
 
 @media (min-width: 35rem) {
 	.destination {
+        background-position: center center;
 		background-image: url(./assets/destination/background-destination-tablet.jpg);
 	}
 }
@@ -531,12 +536,24 @@ body {
 	}
 }
 
-/* Mars */
+/* Crew page */
 
-/* Europa */
+.crew {
+	background-image: url(./assets/crew/background-crew-mobile.jpg);
+}
 
-/* Titan */
+@media (min-width: 35rem) {
+	.crew {
+        background-position: center center;
+		background-image: url(./assets/crew/background-crew-tablet.jpg);
+	}
+}
 
+@media (min-width: 45rem) {
+	.crew {
+		background-image: url(./assets/crew/background-crew-desktop.jpg);
+	}
+}
 /* ------------------------- */
 /* Layout */
 /* ----------------------- */
@@ -551,27 +568,27 @@ body {
 
 .grid-container p:not([class]) {
 	max-width: 50ch;
-    outline: 3px solid green;
 }
 
 .numbered-title {
 	grid-area: title;
 }
 
-.info > p {
+.info > p:not([class]) {
     color: hsl(var(--clr-purple));
 }
 
 /* Destination page layout */
 .grid-container--destination {
 	--flow-space: 2rem;
-	grid-template-areas: 'title' 
+	grid-template-areas: 
+    'title' 
     'image' 
     'tabs' 
     'content';
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
 	grid-area: image;
 	max-width: 60%;
 }
@@ -596,6 +613,35 @@ body {
     font-size: 1.75rem;
 }
 
+/* Crew page layout */
+.grid-container--crew {
+	--flow-space: 2rem;
+	grid-template-areas: 
+    'title' 
+    'image' 
+    'tabs' 
+    'content';
+}
+
+.grid-container--crew > picture {
+	grid-area: image;
+	max-width: 60%;
+    border-bottom: 1px solid hsl(var(--clr-white) / .1);
+}
+
+.grid-container--crew > .dot-indicators {
+	grid-area: tabs;
+}
+
+.grid-container--crew > .crew-details {
+	grid-area: content;
+}
+
+
+ .crew-details h2 {
+    color: hsl( var(--clr-white) / .5);
+ }
+
 @media (min-width: 35em) {
 	.numbered-title {
 		justify-self: start;
@@ -606,6 +652,15 @@ body {
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
+
+    .grid-container--crew {
+        padding-bottom: 0;
+        grid-template-areas: 
+        'title' 
+        'content' 
+        'tabs'
+        'image' ;
+    }
 }
 
 @media (min-width: 45em) {
@@ -637,7 +692,8 @@ body {
         '. image content . ';
 	}
 
-    .grid-container--destination > img {
+    .grid-container--destination > picture,
+    .grid-container--crew > picture {
         max-width: 90%;
     }
 
@@ -649,4 +705,20 @@ body {
 		--gap: min(6vw, 7rem);
 		justify-content: start;
 	}
+
+    .grid-container--crew {
+        grid-template-areas: 
+        '. title title .' 
+        '. content image .' 
+        '. tabs image .';    
+    }
+
+    .grid-container--crew > .dot-indicators {
+        justify-self: start;
+    }
+
+    /* .crew-details {
+        justify-self: start;
+    } */
+
 }
